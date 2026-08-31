@@ -24,6 +24,18 @@
   --border: 1px solid var(--panel-line);
 }
 
+body.light-mode {
+  --ink: #f5f5f5;
+  --ink-raised: #ffffff;
+  --panel: #eaeaea;
+  --panel-line: #cccccc;
+  --bone: #14171a;
+  --bone-dim: #333333;
+  --phosphor: #2a7f4f; /* verde mais escuro */
+  --brass: #a67c52;
+  --rust: #b33a2a;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
