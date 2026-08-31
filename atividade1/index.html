@@ -183,10 +183,10 @@
       <p class="eyebrow">Get in touch</p>
       <h2>Send a signal</h2>
       <p class="contact-sub">Describe what your instrument is doing. A specific symptom gets you a faster, more accurate quote than "it's not working."</p>
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" id="contact-form">
         <label>
           <span>Name</span>
-          <input type="text" name="name" placeholder="Your name" autocomplete="name">
+          <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
         </label>
         <label>
           <span>Instrument</span>
@@ -198,9 +198,10 @@
         </label>
         <label>
           <span>Email</span>
-          <input type="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
         </label>
         <button type="submit" class="btn btn-primary">Transmit</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <aside class="contact-direct">
