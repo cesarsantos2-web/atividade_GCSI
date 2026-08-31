@@ -71,6 +71,12 @@ section {
   max-width: var(--container);
   margin: 0 auto;
 }
+@media (max-width: 640px) {
+  section { padding: 4rem 1.25rem; }
+}
+@media (max-width: 420px) {
+  section { padding: 3rem 1rem; }
+}
 
 :focus-visible {
   outline: 2px solid var(--phosphor);
@@ -144,6 +150,9 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   backdrop-filter: blur(8px);
   border-bottom: var(--border);
 }
+@media (max-width: 640px) {
+  .site-header { padding: 0.9rem 1.25rem; }
+}
 
 .brand {
   display: flex;
@@ -194,7 +203,74 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 
 .nav-cta { display: none; }
 @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
-@media (max-width: 640px) { .site-nav { display: none; } }
+
+/* Botão hambúrguer — só existe visualmente em telas pequenas */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--panel-line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.menu-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--bone);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.menu-toggle:hover { border-color: var(--phosphor-dim); }
+
+.nav-mobile-cta { display: none; }
+
+@media (max-width: 640px) {
+  .menu-toggle { display: flex; }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--ink-raised);
+    border-bottom: var(--border);
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+  .site-nav.is-open {
+    max-height: 360px;
+    opacity: 1;
+  }
+  .site-nav a {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .site-nav a::after { display: none; }
+
+  .nav-mobile-cta {
+    display: inline-flex;
+    margin: 1rem 1.5rem 1.25rem;
+    width: calc(100% - 3rem);
+  }
+}
 
 /* ============================================
    Hero / scope
@@ -294,6 +370,11 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: var(--border);
+}
+@media (max-width: 480px) {
+  .readouts { gap: 1.5rem 2rem; margin-top: 2rem; padding-top: 1.5rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
 }
 .readouts li {
   display: flex;
@@ -594,6 +675,10 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 }
 .contact-form button { margin-top: 0.4rem; justify-self: start; }
 
+@media (max-width: 480px) {
+  .contact-form button { justify-self: stretch; width: 100%; }
+}
+
 .form-status {
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -647,5 +732,9 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   font-size: 0.78rem;
   color: var(--bone-dim);
 }
-.site-footer nav { display: flex; gap: 1.5rem; }
+.site-footer nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .site-footer a:hover { color: var(--phosphor); }
+
+@media (max-width: 480px) {
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 1rem; text-align: left; }
+}
