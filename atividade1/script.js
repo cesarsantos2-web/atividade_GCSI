@@ -45,6 +45,16 @@
   });
 })();
 
+(function () {
+  var toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function () {
+    document.body.classList.toggle('light-mode');
+  });
+})();
+
+
 /* ============================================
    Contact form — sends submissions to a Google
    Apps Script Web App, which appends each one
