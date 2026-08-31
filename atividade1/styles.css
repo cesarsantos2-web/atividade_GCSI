@@ -10,8 +10,10 @@
   --phosphor-dim: #4f8a63;
   --brass: #c9a063;
   --bone: #ede8dd;
-  --bone-dim: #9a9c96;
-  --rust: #a35d45;
+  /* Ajuste para maior contraste em textos secundários */
+  --bone-dim: #b0b2ac;
+  /* Ajuste para mensagens de erro mais legíveis */
+  --rust: #c46a50;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Source Serif 4", serif;
@@ -78,9 +80,10 @@ section {
   section { padding: 3rem 1rem; }
 }
 
+/* Acessibilidade: foco mais perceptível */
 :focus-visible {
-  outline: 2px solid var(--phosphor);
-  outline-offset: 3px;
+  outline: 3px solid var(--phosphor);
+  outline-offset: 4px;
 }
 
 .eyebrow {
@@ -114,6 +117,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 }
 .btn:hover { transform: translateY(-1px); }
 
+/* Mantém contraste adequado nos botões */
 .btn-primary {
   background: var(--phosphor);
   color: #0c1210;
