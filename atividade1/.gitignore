@@ -1,0 +1,16 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependências (caso o projeto passe a usar npm no futuro)
+node_modules/
+
+# Arquivos locais/sensíveis
+# Se algum dia extrair a SCRIPT_URL para um arquivo separado
+# (em vez de deixá-la hardcoded em script.js), ignore-o aqui, ex:
+# config.local.js
